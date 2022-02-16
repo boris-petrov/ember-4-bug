@@ -1,7 +1,12 @@
 {{page-title "Ember4Bug"}}
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+{{later (set this "array" (array 1))}}
 
-{{outlet}}
+{{#each this.array as |unused|}}
+  aaa - {{this.foobar}} - aaa
+
+  {{#classic-component click=(set this "foobar" true)}}
+    click me!
+  {{/classic-component}}
+{{/each}}
+<ClassicComponent />
